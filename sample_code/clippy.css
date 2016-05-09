@@ -1,0 +1,19 @@
+div.clippy {
+  display:inline-block;
+  height:32px;
+  width:32px;
+  margin:0 auto;
+  background-repeat:no-repeat;
+  background-size:32px 32px;
+  background-image:url('./clipboard.png');
+}
+div.clippy object,
+div.clippy object embed { height: 32px; width: 32px }
+div.clippy-small {
+  height:20px;
+  width:20px;
+  background-size:20px 20px;
+  position: relative; top:0.3em;
+}
+div.clippy-small object,
+div.clippy-small object embed { height: 20px; width: 20px }

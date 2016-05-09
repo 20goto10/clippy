@@ -1,0 +1,33 @@
+<html>
+  <link href="clippy.css" media="all" rel="stylesheet" />
+  <script>
+    function set_status(text) {
+      $('#status').text(text);
+    }
+    function getCopiedText() { 
+      set_status('copied!');
+      setInterval(function() { set_status('') }, 2000);
+      return $('#texttocopy').val(); 
+    }
+  </script>
+  <body>
+    <h1>Clippy demo</h1>
+    <h5>Note that this will only work under a webserver. I.e. if your url starts with file:// instead of http/https it will not work (unless you have an unusual browser security configuration).</h5>
+    Copy me:
+    <input type="text" id="texttocopy" value="hello world!" /><br /><br />
+    <div class='clippy'>
+      <object classid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000' wmode='transparent'>
+        <param name='movie' value='clippy.swf'/>
+        <param name='allowScriptAccess' value='always'/>
+        <param name='quality' value='high'/>
+        <param name='scale' value='noscale'/>
+        <param name='FlashVars' value='call=getCopiedText'>
+        <param name='bgcolor' value='transparent'>
+        <embed src='clippy.swf' name='clippy' quality='high' allowScriptAccess='always'
+             type='application/x-shockwave-flash' pluginspage='http://www.macromedia.com/go/getflashplayer'
+             FlashVars='call=getCopiedText' bgcolor='transparent' wmode='transparent' />
+        </object>
+    </div>
+    <span id="status" style="text-color:#ccc;font-family:Arial;font-weight:bold"></span>
+  </body  >
+</html>
